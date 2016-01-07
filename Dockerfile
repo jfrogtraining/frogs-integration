@@ -7,4 +7,4 @@ COPY wrapper.sh /wrapper.sh
 
 EXPOSE 80 9000
 
-CMD ["wrapper.sh"]
+CMD ["/wrapper.sh"]
