@@ -2,6 +2,6 @@
 FROM artifactory.local:5001/nginxjava8
 # get the jar
 COPY frogsui /usr/share/nginx/html/frogsui/
-COPY frogsws.jar /ws
+COPY frogsws.jar /ws/frogsws.jar
 
 CMD ["java", "-jar", "/ws/frogsws.jar"] 
