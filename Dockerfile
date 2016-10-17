@@ -1,5 +1,5 @@
 # Environment integration Java8 + nginx
-FROM gcartifactory-us.jfrog.info:5007/nginxjava8
+FROM artifactory-lb.marathon.mesos:5001/nginxjava8
 # get the jar
 COPY frogsui /usr/share/nginx/html/frogsui/
 RUN sed -i "s+http://localhost:9000/+/ws/+g" /usr/share/nginx/html/frogsui/app/app.js
