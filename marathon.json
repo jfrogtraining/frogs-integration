@@ -6,7 +6,7 @@
             "port_mappings": [
                 {
                     "container_port": 80,
-                    "protocol": "tcp"
+                    "host_port": 8090
                 }
             ],
             "privileged": false,
