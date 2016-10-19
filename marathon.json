@@ -14,6 +14,7 @@
         },
         "type": "DOCKER"
     },
+    "acceptedResourceRoles": ["slave_public"],
     "cpus": 0.1,
     "id": "frogs",
     "instances": 1,
