@@ -15,10 +15,10 @@
         "type": "DOCKER"
     },
     "acceptedResourceRoles": ["slave_public"],
-    "cpus": 0.1,
+    "cpus": 0.5,
     "id": "frogs",
     "instances": 1,
-    "mem": 128,
+    "mem": 512,
     "upgradeStrategy": {
         "minimumHealthCapacity": 0
     }
