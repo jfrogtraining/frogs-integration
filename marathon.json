@@ -3,14 +3,13 @@
         "docker": {
             "image": "artifactory-lb.marathon.mesos:5001/frogs-integration:FROGS_VERSION",
             "network": "BRIDGE",
-            "port_mappings": [
+            "portMappings": [
                 {
-                    "container_port": 80,
-                    "host_port": 8090
+                    "containerPort": 80,
+                    "hostPort": 8090
                 }
             ],
-            "privileged": false,
-            "force_pull_image": false
+            "privileged": false
         },
         "type": "DOCKER"
     },
