@@ -1,7 +1,7 @@
 {
     "container": {
         "docker": {
-            "image": "artifactory-lb.marathon.mesos:5001/frogs-integration:17",
+            "image": "artifactory-lb.marathon.mesos:5001/frogs-integration:FROGS_VERSION",
             "network": "BRIDGE",
             "port_mappings": [
                 {
@@ -17,6 +17,10 @@
     "cpus": 0.1,
     "id": "frogs",
     "instances": 1,
+    "labels": {
+        "HAPROXY_0_VHOST": "ELB_HOSTNAME",
+        "HAPROXY_GROUP": "external"
+    },
     "mem": 128,
     "upgradeStrategy": {
         "minimumHealthCapacity": 0
