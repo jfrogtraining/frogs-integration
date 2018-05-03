@@ -1,12 +1,19 @@
 # Environment integration Java8 + nginx
-FROM gcartifactory-us.jfrog.info:5007/nginxjava8
+FROM kmonkeyjam/nginx-java8
 # get the jar
-COPY frogsui /usr/share/nginx/html/frogsui/
+RUN apt-get update
+RUN apt-get install --yes curl
+RUN curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
+RUN apt-get install --yes nodejs
+RUN apt-get install --yes build-essential
+RUN npm config set strict-ssl false
+RUN npm install shelljs
+COPY frogs-ui /usr/share/nginx/html/frogsui/
 RUN sed -i "s+http://localhost:9000/+/ws/+g" /usr/share/nginx/html/frogsui/app/app.js
-COPY frogsws.jar /ws/frogsws.jar
+COPY frogsws-0.2.0.jar /ws/frogsws.jar
 COPY wrapper.sh /wrapper.sh
 COPY ws.conf /etc/nginx/conf.d/ws.conf
 
-EXPOSE 80 9000
+EXPOSE 81 9000
 
 CMD ["/wrapper.sh"]
